@@ -4,7 +4,7 @@ import { GenerationParams, StructuredLessonPlan } from "../types";
 
 export const generateLessonPlan = async (params: GenerationParams): Promise<StructuredLessonPlan> => {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  const modelName = "gemini-3-pro-preview";
+  const modelName = "gemini-3.1-pro-preview";
   
   const stepsDescription = params.model.steps
     .map((s, i) => `${i + 1}. ${s.title}: ${s.description}`)
